@@ -1,37 +1,42 @@
 import math
 import statistics
+import random
 
-# 1. Función para calcular el área de un rectángulo
+# 1. Crea una función calcular_area_rectangulo que reciba dos parámetros (largo y ancho) y retorne el área del rectángulo (1 punto)
 def calcular_area_rectangulo(largo, ancho):
     return largo * ancho
 
-# 2. Función para calcular la circunferencia de un círculo
+# 2. Crea una función calcular_circunferencia que reciba el radio de un círculo y retorne su circunferencia. Usa la constante pi del módulo math (2 puntos).
 def calcular_circunferencia(radio):
     return 2 * math.pi * radio
 
-# 3. Función para calcular el promedio de una lista de números
+# 3. Crea una función calcular_promedio que reciba una lista de números y retorne el promedio (1 punto). 
 def calcular_promedio(numeros):
     return sum(numeros) / len(numeros) if numeros else 0
 
-# 4. Función para calcular el promedio usando statistics.mean
+# 4. Importa la función mean del módulo statistics y úsala en una nueva función calcular_promedio_avanzado para calcular el promedio de la misma lista de números del punto anterior (2 puntos). 
 def calcular_promedio_avanzado(numeros):
     return statistics.mean(numeros)
 
-# 5. Generación manual de números pseudoaleatorios (sin random)
-# Usaremos una alternativa básica para simular números aleatorios
+# 5. Crea una función generar_numeros_aleatorios que reciba dos parámetros (cantidad y limite), y retorne una lista de números aleatorios entre 1 y el límite especificado. Usa el módulo random (2 puntos). 
 def generar_numeros_aleatorios(cantidad, limite):
-    numeros = []
-    semilla = 42  # Semilla arbitraria
-    for _ in range(cantidad):
-        semilla = (semilla * 7 + 13) % limite + 1
-        numeros.append(semilla)
-    return numeros
+    return [random.randint(1, limite) for _ in range(cantidad)]
 
-# 6. Programa que utiliza todas las funciones
+# 6. Escribe un programa que utilice cada una de las funciones anteriores e imprime los resultados de cada cálculo (2 puntos). 
 if __name__ == "__main__":
-    print("Área del rectángulo:", calcular_area_rectangulo(5, 10))
-    print("Circunferencia del círculo:", calcular_circunferencia(7))
-    lista_numeros = [10, 20, 30, 40, 50]
-    print("Promedio de la lista:", calcular_promedio(lista_numeros))
-    print("Promedio avanzado de la lista:", calcular_promedio_avanzado(lista_numeros))
-    print("Lista de números aleatorios:", generar_numeros_aleatorios(5, 100))
+    # Solicitar entrada del usuario
+    largo = float(input("Ingrese el largo del rectángulo: "))
+    ancho = float(input("Ingrese el ancho del rectángulo: "))
+    print(f"El área del rectángulo es: {calcular_area_rectangulo(largo, ancho)}")
+
+    radio = float(input("Ingrese el radio del círculo: "))
+    print(f"La circunferencia del círculo es: {calcular_circunferencia(radio)}")
+
+    numeros_str = input("Ingrese una lista de números separados por comas: ")
+    numeros = [float(num) for num in numeros_str.split(",")]
+    print(f"El promedio de los números es: {calcular_promedio(numeros)}")
+    print(f"El promedio avanzado de los números es: {calcular_promedio_avanzado(numeros)}")
+
+    cantidad = int(input("Ingrese la cantidad de números aleatorios a generar: "))
+    limite = int(input("Ingrese el límite máximo para los números aleatorios: "))
+    print(f"Números aleatorios generados: {generar_numeros_aleatorios(cantidad, limite)}")
