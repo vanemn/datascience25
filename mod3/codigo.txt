@@ -1,0 +1,14 @@
+ python -m venv venv
+ .\venv\Scripts\activate
+(venv) PS D:\Escritorio\CURSO CIENCIA DE DATOS\modulo2\datascience25\mod3> pip install numpy
+
+
+
+cd .\mod3
+python --version
+python -m venv myenv
+m.\myenv\Scripts\activate
+deactivate
+pip install numpy
+pip install pandas
+pip freeze > requirements.txt
