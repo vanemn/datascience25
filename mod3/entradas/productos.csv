@@ -1,3 +1,5 @@
-Producto,Precio
-Manzana,1.5
-Banana,0.75
+producto;Precio;Cantidad
+manzana;1.2;10
+pera;0.8;20
+naranja;1.5;15
+plátano;1.0;12
