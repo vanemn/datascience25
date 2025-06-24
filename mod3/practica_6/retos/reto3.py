@@ -45,7 +45,7 @@ antes = len(df)
 df= df.drop_duplicates()
 despues = len(df)
 eliminado = antes - despues
-df.to_csv("salidas/calif_sin_duplicado.csv", index=False, na_rep="NaN")
+df.to_csv("salidas/exp_sin_duplicados.csv", index=False, na_rep="NaN")
 print("Filas Antes:",antes)
 print("Filas despues:", despues)
 print("Filas eliminadas", eliminado)
