@@ -53,8 +53,12 @@ print("Filas eliminadas", eliminado)
 
 #Paso6  Discretizar  en categoria
 #3.Clasificar con pd.cut()en:oPrincipiante (0–2)oIntermedio (3–5)oAvanzado (6–10)oExperto (>10)Resultado: Grupo_Experiencia4.Analizar relación entre Edady Experiencia
-
-  
+df["Grupo_Experiencia"] = pd.cut(df["Experiencia"], 
+                                  bins=[-np.inf, 2, 5, 10, np.inf], 
+                                    labels=["Principiante", "Intermedio", "Avanzado", "Experto"])
+print(df[["ID", "Edad", "Experiencia", "Grupo_Experiencia"]].head())
+df.to_csv("salidas/exp_categorizadas.csv", index=False) 
+ 
 #paso 7: Agregar descripcion (join externo)
 
 
