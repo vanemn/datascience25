@@ -59,8 +59,7 @@ plt.ylabel('Salario')
 plt.show()
 
 # 
-
-sns.pairplot(df [['Edad', 'Salario']], diag_kind='kde')
+sns.pairplot(df [['Edad', 'Salario']])
 plt.title('Pairplot de Edad y Salario')
 plt.show()
 
